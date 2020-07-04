@@ -1,0 +1,24 @@
+- caption: GitHub
+  href: https://github.com/sravanpabolu
+  icon: entypo/github.svg
+
+- caption: Stack Overflow
+  href: https://stackoverflow.com/users/1918002/sravan
+  icon: icons/stackoverflow.svg
+
+- caption: Linkedin
+  href: https://www.linkedin.com/in/sravanpabolu/
+  icon: entypo/linkedin.svg
+
+# - caption: Facebook
+#   href: https://www.facebook.com
+#   icon: entypo/facebook.svg
+
+- caption: Twitter
+  href: https://twitter.com/sravanpabolu
+  icon: entypo/twitter.svg
+
+- caption: Chennai, India 
+  href: https://goo.gl/maps/adhrnmmAwPruh6jn6
+  icon: entypo/location-pin.svg
+
