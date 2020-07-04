@@ -4,7 +4,7 @@ title: About
 permalink: /about
 ---
 
-Hi there, I'm Sravan. I am an influential and diligent iOS professional with over 9 years rich experience in Development.
+Hi there, I'm Sravan. I am an influential and diligent iOS professional with over 9 years industry experience in Development.
 
 <H3>Highlights</h3>
 <li> Design of the new enhancements.
@@ -27,4 +27,6 @@ Swift Programming, Objective-C Programming, iOS, COCOA Framework, web services, 
 <br><b>Execution Models: </b>Agile, Waterfall
 <br><b>Domains : </b>Retail, Travel, Banking, Insurance, Life Sciences
 <br><b>Application Architecture: </b>MVC, MVVM
+
+
 
