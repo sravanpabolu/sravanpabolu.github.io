@@ -1,10 +1,10 @@
 # Outputting
-permalink: /:categories/:year/:month/:day/:title.html
+# permalink: /:categories/:year/:month/:day/:title.html
 
 # Conversion
-markdown:         kramdown
-highlighter:      rouge
-excerpt_separator: <!--more-->
+# markdown:         kramdown
+# highlighter:      rouge
+# excerpt_separator: <!--more-->
 
 # Config for your profile.
 title:            Welcome to my blog            # Site title
@@ -14,7 +14,7 @@ avatar:           /theme/img/sravan_github_profile_img.png   # Path to an avata
 
 # The theme uses the baseurl throughout, which is useful for running the entire
 # site under a subdir, like for this GitHub Pages deployment as a project site.
-baseurl: 
+# baseurl: "/gh-pages"
 
 # Add a directory to hold misc pages, just to keep the root directory clean.
 include: ["_pages", "_portfolio"]
@@ -36,11 +36,6 @@ collections:
     permalink: /:collection/:name.html
 
 defaults:
-# Turn the profile sidebar on for all pages by default, except for the
-# collections, where it is off and replaced by useful things on the sidebar.
-# To override this one a page, use
-#    show_profile: false
-# to hide the profile.
   -
     scope:
       path: ""
@@ -50,7 +45,7 @@ defaults:
     scope:
       path: "_posts"
     values:
-      show_profile: false
+      show_profile: true
       layout: defaults/post
   -
     scope:
