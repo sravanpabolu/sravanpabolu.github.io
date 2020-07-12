@@ -1,26 +1,34 @@
 ---
-title: Using DateTime picker in React Native - POC
+title: Using DateTime picker in React Native - example
 tags:
-
     - react
     - react-native
-    - POC
-
+    - Example
+layout: defaults/post
 ---
 
-**An Example:**
+_In this blog post, We'll learn, how to develop a simple react native app, where user can click a button to open date picker, select a date and come back to previous screen, with the selected date displayed to a label_
 
-I am going to use `react-native-modal-datetime-picker` component in this example. I am using version `8.7.1` and the github link for the repo is [github](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
+In this Example, we will be using 
+1. React `hooks` - inside `DatePicker` component 
+1. Call backs - For getting the selected date from `DatePicker` to `App` 
 
-After you create react native project, install the following package using command <br>
 
- `npm i react-native-modal-datetime-picker @react-native-community/datetimepicker`
- 
- 
+### Prerequisite
+I am going to use `react-native-modal-datetime-picker` npmjs module in this example. I am using version `8.7.1` and the github link for the repo is [here](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
+
+<br>
+### Getting Started
+Assuming that you have already created react native project, install the following package in terminal using the following command <br>
+
+{% highlight javascript %}
+    npm i react-native-modal-datetime-picker @react-native-community/datetimepicker
+{% endhighlight %}
+  
 Create a new file named `DatePicker.jsx` and paste the following code 
 
     import React, { useState } from "react";
-    import { View, Image, TouchableOpacity } from "react-native";
+    import { View, Button } from "react-native";
     import DateTimePickerModal from "react-native-modal-datetime-picker";
 
     const DatePicker = ({ selectedDateCallback }) => {
@@ -44,9 +52,7 @@ Create a new file named `DatePicker.jsx` and paste the following code
 
         return (
             <View>
-                <TouchableOpacity onPress={showDatePicker}>
-                    <Text> Show Date </Text>
-                </TouchableOpacity>
+                <Button onPress={showDatePicker} title="Show Date Picker "></Button>
                 <DateTimePickerModal
                     isVisible={isDatePickerVisible}
                     mode="date"
@@ -65,7 +71,7 @@ First, Add Import <br>
     import DatePicker from './DatePicker'
 {% endhighlight %}
 
-Next, Add the following code above `render()` method <br>
+Next, Add the following code above `return()` method <br>
 {% highlight javascript %}
     const [aDate, setDate] = useState(new Date());
 
@@ -76,7 +82,14 @@ Next, Add the following code above `render()` method <br>
     }
 {% endhighlight %}
 
-Atlast, Add the following code in `render()` method
+Atlast, Add the following code in `return()` method
 {% highlight javascript %}
     <DatePicker selectedDateCallback={this.dateCallback} />
 {% endhighlight %}
+
+Now, Save all the changes run the app in iOS Simulator or Android emulator or your own device to see the output. You can find the source code for the project [here](https://github.com/sravanpabolu/DatePickerExampleReactNative)
+
+Find the screenshots below: 
+
+![ReactNativeDateTimePicker](/assets/images/ReactNativeDateTimePicker2.png){: height="50%" width="50%"} 
+![ReactNativeDateTimePicker](/assets/images/ReactNativeDateTimePicker3.png){: height="50%" width="50%"} 
