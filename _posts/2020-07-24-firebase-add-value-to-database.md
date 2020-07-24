@@ -1,11 +1,12 @@
 ---
+layout: defaults/post
+narrow: true
 title: Firebase - Add value to database
 tags:
     - react
     - react-native
     - Example
     - Firebase
-layout: defaults/post
 ---
 
 _In this blog post, We'll learn, how to use push method to update a value to realtime database in Firebase. This is an example written in react/react-native application_

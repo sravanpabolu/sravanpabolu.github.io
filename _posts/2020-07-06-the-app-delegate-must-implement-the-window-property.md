@@ -1,5 +1,7 @@
 ---
 title:  XCode error - The app delegate must implement the window property
+layout: defaults/post
+narrow: true
 tags:
     - iOS
     - SwiftUI

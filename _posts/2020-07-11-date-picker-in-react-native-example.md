@@ -1,10 +1,11 @@
 ---
+layout: defaults/post
+narrow: true
 title: Using DateTime picker in React Native - example
 tags:
     - react
     - react-native
     - Example
-layout: defaults/post
 ---
 
 _In this blog post, We'll learn, how to develop a simple react native app, where user can click a button to open date picker, select a date and come back to previous screen, with the selected date displayed to a label_
