@@ -9,7 +9,7 @@ tags:
     - Firebase
 ---
 
-_In this blog post, We'll learn, how to use push method to update a value to realtime database in Firebase. This is an example written in react/react-native application_
+_In this blog post, We'll learn, how to use push method to add a value to realtime database in Firebase. This is an example written in react/react-native application_
 
 In this Example, we will be using 
 1. React 
@@ -25,7 +25,7 @@ In this Example, we will be using
 Add the following code to push an item `Buy Groceries` and the status of the item(completed/not completed) as `false` <br>
 
 {% highlight javascript %}
-    database.ref(Constants.FIREBASE_TODO_PATH).push({
+    database.ref('/todoitems').push({
       done: false,
       todoItemName: "Buy Groceries"
     });
