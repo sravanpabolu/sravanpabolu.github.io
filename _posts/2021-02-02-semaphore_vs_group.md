@@ -1,6 +1,6 @@
 ---
 layout: defaults/post
-title: dispatchQueue vs dispatchSemaphore
+title: DispatchQueue vs DispatchSemaphore
 date: 2021-02-02 19:49
 category: 
 author: Sravan Kumar Pabolu
