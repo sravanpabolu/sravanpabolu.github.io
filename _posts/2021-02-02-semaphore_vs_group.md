@@ -9,8 +9,6 @@ summary: We are discussing about the difference between DispatchQueue and Dispat
 narrow: true
 ---
 
-# Theory
-
 ##### Definition 
 Semaphores and groups have, in a sense, opposite semantics. Both maintain a count. With a semaphore, a wait is allowed to proceed when the count is non-zero. With a group, a wait is allowed to proceed when the count is zero.
 

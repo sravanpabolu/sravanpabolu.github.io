@@ -8,11 +8,7 @@ tags: [iOS, Swift, Protocol Oriented Programming, OOPs]
 summary: 
 ---
 
-
-
-## Theory
-
-### Quick Reference
+##### Quick Reference
 1. Protocols are used to define a “blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality.
 1. Protocols allow developers to write flexible and extensible code in Swift without having to compromise the language’s expressiveness.
 
