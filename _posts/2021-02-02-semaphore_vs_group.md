@@ -4,7 +4,7 @@ title: DispatchQueue vs DispatchSemaphore
 date: 2021-02-02 19:49
 category: 
 author: Sravan Kumar Pabolu
-tags: [iOS, DispatchQueue, DispatchSemaphore, Interview Preparation]
+tags: [iOS, DispatchQueue, DispatchSemaphore, Interviews]
 summary: We are discussing about the difference between DispatchQueue and DispatchSemaphore in iOS
 narrow: true
 ---
