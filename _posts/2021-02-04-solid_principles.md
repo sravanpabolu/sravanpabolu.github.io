@@ -62,6 +62,10 @@ While the above code is totally correct but it is “anti-pattern”. For us to 
 
 Refactoring the code
     
+    /// Executes a function
+    protocol Executable {
+        func execute()
+    }
     /// Conforms to `Executable`
     class TurnOn: Executable {
 
@@ -174,7 +178,9 @@ Liskov Substitution guarantees that our speedDescription algorithm will keep fun
 
 ##### I — Interface Segregation  
 The Interface Segregation Principle deals separation of concerns. It states that a client should not be forced to implement or depend upon methods that it does not use. It is better to have many specific interfaces than to have a monolithic general purpose interface. The entire purpose of Interface Segregation is to reduce interface bloat or what is known as interface pollution and to favour code readability.
-
+##### Example 
+1. UITableViewDataSource, UITableViewDelegate protocols 
+1. UIKit, ARKit
 
 <BR>
 <HR>
@@ -185,6 +191,8 @@ Dependency Inversion Principle states that, higher level modules shouldn’t dep
 
 ##### Example 
 1. Remote file server client
+1. Model View Controller
+
 
 
 <BR>
