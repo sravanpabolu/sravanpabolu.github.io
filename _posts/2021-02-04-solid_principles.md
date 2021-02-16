@@ -172,6 +172,10 @@ Liskov Substitution guarantees that our speedDescription algorithm will keep fun
     let carSpeedDescription = Handler.speedDescription(for: car)
     let planeSpeedDescription = Handler.speedDescription(for: plane)
 
+In other terms,
+The Liskov Substitution Principle (LSP) states that objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. What that means is that when you inherit from a class or an abstract class or implement an interface (protocol), your objects should be replaceable and injectable wherever that interface or class that you subclassed from was used. This principle is often referred to as design by contract or, as of late in the Swift community, referred to as protocol-oriented programming. The main message of this principle is that you should not violate the contract that your interfaces you subclass from promise to fulfill, and that by subclassing, those subclasses could be used anywhere that the superclass was previously used.
+
+
 <BR>
 <HR>
 <BR>
@@ -205,3 +209,4 @@ Dependency Inversion Principle states that, higher level modules shouldn’t dep
 1. [medium - part 4](https://medium.com/@bobgodwinx/solid-principles-part-4-13de4d4d7571)
 1. [medium - part 5](https://medium.com/@bobgodwinx/solid-principles-part-5-b1d2047c2d55)
 1. [Wiki](https://en.wikipedia.org/wiki/SOLID)
+1. [iosinterviewguide](https://iosinterviewguide.com/ios-interview-questions-for-senior-developers-in-2020)
