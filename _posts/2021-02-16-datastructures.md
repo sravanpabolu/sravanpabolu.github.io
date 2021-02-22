@@ -34,4 +34,4 @@ summary:
 
 
 #### References
-1. [andrew.cmu.edu])(https://www.andrew.cmu.edu/course/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html#:~:text=A%20queue%20is%20a%20container,%2Dout%20(FIFO)%20principle.&text=The%20difference%20between%20stacks%20and,item%20the%20least%20recently%20added.)
+1. [andrew.cmu.edu])(https://www.andrew.cmu.edu/course/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html)
