@@ -51,6 +51,10 @@ Here are few quick reference for interview preparation
     1. DispatchQueue - object that manages the execution of tasks serially/concurently on main/background thread
     1. DispatchWorkItem - the work you want to perform, encapsulated in a way that lets you attach a completion handle
     1. DispatchGroup - group of tasks that you monitor as a single unit
+        1. enter()
+        1. leave()
+        1. wait()
+        1. notify() 
     1. Workloop - A dispatch object that prioritizes the execution of tasks based on their quality-of-service (QoS) level.
         1. userInteractive - highest priority - animations, event handing, etc.,
         1. userInitiated - qos class for tasks that prevent user from actively using your app.
@@ -62,3 +66,5 @@ Here are few quick reference for interview preparation
         1. signal() - Signals (increments) a semaphore.
         1. wait() - Waits for, or decrements, a semaphore.
 1. NSOperation - An abstract class that represents the code and data associated with a single task.
+1. Closures
+    1. escaping - A closure is said to escape a function when the closure is passed as an argument to the function, but is called after the function returns. When you declare a function that takes a closure as one of its parameters, you can write @escaping before the parameter’s type to indicate that the closure is allowed to escape.
