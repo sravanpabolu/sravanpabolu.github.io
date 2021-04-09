@@ -68,3 +68,14 @@ Here are few quick reference for interview preparation
 1. NSOperation - An abstract class that represents the code and data associated with a single task.
 1. Closures
     1. escaping - A closure is said to escape a function when the closure is passed as an argument to the function, but is called after the function returns. When you declare a function that takes a closure as one of its parameters, you can write @escaping before the parameter’s type to indicate that the closure is allowed to escape.
+### Memory Management
+1. Autoreleasepool:
+    Here’s how autorelease works. Your code runs in the presence of something called an autorelease pool. (If you look in main.m, you can actually see an autorelease pool being created.) When you send autorelease to an object, that object is placed in the autorelease pool, and a number is incremented saying how many times this object has been placed in this autorelease pool. From time to time, when nothing else is going on, the autorelease pool is automatically drained. This means that the autorelease pool sends release to each of its objects, the same number of times as that object was placed in this autorelease pool, and empties itself of all objects. If that causes an object’s retain count to be zero, fine; the object is destroyed in the usual way. So autorelease is just like release — effectively, it is a form of release — but with a proviso, “later, not right this second.”
+    <br>
+    ref: [Reference](http://www.apeth.com/iOSBook/ch12.html#EXstrongWeakDance)
+1. what is unowned?
+    unowned is like an assign property policy in Objective-C (non-ARC weak)
+    ref: [stackoverflow](https://stackoverflow.com/a/41664269/1918002)
+    ref: [Apple](https://developer.apple.com/library/archive/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html)
+    
+
