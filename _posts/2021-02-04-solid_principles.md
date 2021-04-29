@@ -9,26 +9,33 @@ summary:
 ---
 
 #### Concepts
-##### Single-responsibility principle
+##### Single-responsibility principle (SRP)
 A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class.
 
-##### Open–closed principle
+##### Open–closed principle (OCP)
 "Software entities ... should be open for extension, but closed for modification."
-##### Liskov substitution principle
+##### Liskov substitution principle (LSP)
 "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program." 
+**Child classes should never break parent classes**
 
-##### Interface segregation principle
-"Many client-specific interfaces are better than one general-purpose interface."
+##### Interface segregation principle (ISP)
+"Many client-specific interfaces are better than one general-purpose interface." **Make fine grained interface that are client specific**
 
-##### Dependency inversion principle
-One should "depend upon abstractions, [not] concretions."
+##### Dependency inversion principle (DIP)
+One should "depend upon abstractions, [not] concretions." **higher level modules shouldn’t depend on the lower level modules**
 <BR>
 <HR>
 <BR>
+
+#### What they solve?
+1. Delicacy - Change in one place breaks unexpected parts.
+1. Immobility - reusable code
+1. Irritable - takes a lot of effort for change because it efferts sevaral parts.
+
 #### Details
 ##### S - Single Responsibility Principle — SRP
 
-This principle states that a class should do only one job! Yes this is the meaning of single responsibility and there is no need to sugar coat it. “A class = performs one operation” simple and stupid.
+This principle states that **a class should do only one job!** Yes this is the meaning of single responsibility and there is no need to sugar coat it. “A class = performs one operation” simple and stupid. 
 
     protocol SwitchOn {
         func on()
@@ -100,7 +107,7 @@ Refactoring the code
 
 ##### O - Open/Closed Principle
 
-In object-oriented programming, the open–closed principle states "software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification"; that is, such an entity can allow its behaviour to be extended without modifying its source code.
+In object-oriented programming, the open–closed principle states "**software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification**"; that is, such an entity can allow its behaviour to be extended without modifying its source code.
 
 
 The Open Closed principle enforces a rule that a class can be easily extended but at the same time forbids any modification to it’s self. This principle highly draws it’s traits from the Decorator & Strategy pattern. The Decorator allows extension of behaviour dynamically or statically during runtime. It is often referred to as “the alternative to subclassing”, while the Strategy allows implementation of different algorithms interchangeable within the same family.
@@ -121,6 +128,9 @@ The Open Closed principle enforces a rule that a class can be easily extended bu
 <BR>
 
 ##### L - Liskov substitution principle 
+
+**Child classes should never break parent classes**
+
 Liskov substitution principle states that all derived class should be substitutable for it’s original base class. What this means in practice is that a subclass should always be interchangeable for it’s super class. The main purpose of this principle is to guarantee semantic interoperability within the types hierarchy.
 
     class Vehicle {
@@ -181,7 +191,11 @@ The Liskov Substitution Principle (LSP) states that objects in a program should 
 <BR>
 
 ##### I — Interface Segregation  
+
+**Make fine grained interface that are client specific**
+
 The Interface Segregation Principle deals separation of concerns. It states that a client should not be forced to implement or depend upon methods that it does not use. It is better to have many specific interfaces than to have a monolithic general purpose interface. The entire purpose of Interface Segregation is to reduce interface bloat or what is known as interface pollution and to favour code readability.
+
 ##### Example 
 1. UITableViewDataSource, UITableViewDelegate protocols 
 1. UIKit, ARKit
@@ -191,7 +205,8 @@ The Interface Segregation Principle deals separation of concerns. It states that
 <BR>
 
 ##### D - Dependency Inversion Principle
-Dependency Inversion Principle states that, higher level modules shouldn’t depend on the lower level modules, they should both depend on abstractions. In other words all entities should be based on Abstract Interfaces and not on Concrete Types. The principle also stressed that abstractions should not depend on details. Details should depend upon abstractions.
+
+Dependency Inversion Principle states that, **higher level modules shouldn’t depend on the lower level modules**, they should both depend on abstractions. In other words all entities should be based on Abstract Interfaces and not on Concrete Types. The principle also stressed that abstractions should not depend on details. Details should depend upon abstractions.
 
 ##### Example 
 1. Remote file server client
