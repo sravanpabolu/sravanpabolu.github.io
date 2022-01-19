@@ -51,6 +51,88 @@ summary:
             return items.removeFirst()
         }
     }
+    
+##### The Pillars of POP
+**Protocol Extensions**<br>
+    Protocols serve as blueprints: they tell us what adopters shall implement, but you can’t provide implementation within a protocol. What if we need to define default behavior for conforming types? We need to implement it in a base class, right? Wrong! Having to rely on a base class for default implementation would eclipse the benefits of protocols. Besides, that would not work for value types. Luckily, there is another way: protocol extensions are the way to go! In Swift, you can extend a protocol and provide default implementation for methods, computed properties, subscripts and convenience initializers. In the following example, I provided default implementation for the type method uid().
+
+    extension Entity {
+        static func uid() -> String {
+            return UUID().uuidString
+        }
+    }
+
+Now types that adopt the protocol need not implement the uid() method anymore.
+
+    struct Order: Entity {
+        var name: String
+        let uid: String = Order.uid()
+    }
+    let order = Order(name: "My Order")
+    print(order.uid)
+    // 4812B485-3965-443B-A76D-72986B0A4FF4
+
+**Protocol Inheritance**<br>
+    A protocol can inherit from other protocols and then add further requirements on top of the requirements it inherits. In the following example, the protocol Persistable inherits from the Entity protocol I introduced earlier. It adds the requirement to save an entity to file and load it based on its unique identifier.
+
+    protocol Persistable: Entity {
+        func write(instance: Entity, to filePath: String)
+        init?(by uid: String)
+    }
+
+The types that adopt the Persistable protocol must satisfy the requirements defined in both the Entity and the Persistable protocol.
+
+If your type requires persistence capabilities, it should implement the Persistable protocol.
+
+    struct PersistableEntity: Persistable {
+        var name: String
+        func write(instance: Entity, to filePath: String) { // ...
+        }  
+        init?(by uid: String) {
+            // try to load from the filesystem based on id
+        }
+    }
+
+Whereas types that do not need to be persisted shall only implement the Entity protocol:
+
+    struct InMemoryEntity: Entity {
+        var name: String
+    }
+
+Protocol inheritance is a powerful feature which allows for more granular and flexible designs.
+
+**Protocol Composition**<br>
+    Swift does not allow multiple inheritance for classes. However, Swift types can adopt multiple protocols. Sometimes you may find this feature useful.
+
+Here’s an example: let’s assume that we need a type which represents an Entity.
+
+We also need to compare instances of given type. And we want to provide a custom description, too.
+
+We have three protocols which define the mentioned requirements:
+
+1. Entity
+1. Equatable
+1. CustomStringConvertible
+<br>
+If these were base classes, we’d have to merge the functionality into one superclass; however, with POP and protocol composition, the solution becomes:
+
+    struct MyEntity: Entity, Equatable, CustomStringConvertible {
+        var name: String
+        // Equatable
+        public static func ==(lhs: MyEntity, rhs: MyEntity) -> Bool {
+            return lhs.name == rhs.name
+        }
+        // CustomStringConvertible
+        public var description: String {
+            return "MyEntity: \(name)"
+        }
+    }
+    let entity1 = MyEntity(name: "42")
+    print(entity1)
+    let entity2 = MyEntity(name: "42")
+    assert(entity1 == entity2, "Entities shall be equal")
+
+This design not only is more flexible than squeezing all the required functionality into a monolithic base class but also works for value types.
 
 
 ##### References
@@ -58,3 +140,4 @@ summary:
 1. [hackingwithswift](https://www.hackingwithswift.com/quick-start/understanding-swift/how-is-protocol-oriented-programming-different-from-object-oriented-programming)
 1. [hackingwithswift](https://www.hackingwithswift.com/example-code/language/what-is-protocol-oriented-programming)
 1. [toptal](https://www.toptal.com/swift/introduction-protocol-oriented-programming-swift)
+1. [pluralsight](https://www.pluralsight.com/guides/protocol-oriented-programming-in-swift)
