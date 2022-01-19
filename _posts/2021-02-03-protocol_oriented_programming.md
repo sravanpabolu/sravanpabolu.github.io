@@ -127,6 +127,7 @@ If these were base classes, we’d have to merge the functionality into one supe
             return "MyEntity: \(name)"
         }
     }
+    
     let entity1 = MyEntity(name: "42")
     print(entity1)
     let entity2 = MyEntity(name: "42")
